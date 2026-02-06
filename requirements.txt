@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pydantic
+httpx
+sqlalchemy
+alembic
+psycopg2-binary
+redis
+celery
+sentence-transformers
+transformers
+langchain
+python-dotenv
