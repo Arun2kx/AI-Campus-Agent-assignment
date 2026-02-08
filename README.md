@@ -21,5 +21,3 @@ git commit -m "Initial commit: AI Campus Agent assignment"
 # create remote repo and push (interactive)
 gh repo create <your-username>/ai-campus-agent --public --source=. --push
 ```
-
-After pushing, you'll have a GitHub repo URL to submit as the assignment link.
