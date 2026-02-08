@@ -20,4 +20,32 @@ git add .
 git commit -m "Initial commit: AI Campus Agent assignment"
 # create remote repo and push (interactive)
 gh repo create <your-username>/ai-campus-agent --public --source=. --push
+
 ```
+ARCHITECTURE
+sequenceDiagram
+  participant U as User
+  participant G as API Gateway
+  participant O as Orchestrator
+  participant N as NLU
+  participant A as Adapter
+  participant V as Validator
+  participant C as Confirmation
+  participant B as BookingExec
+  U->>G: "Book Lab 101 for Feb 10 2pm-4pm"
+  G->>O: forward
+  O->>N: classify + extract
+  N-->>O: intent=booking, entities
+  O->>A: check availability
+  A-->>O: available
+  O->>V: validate constraints
+  V-->>O: ok
+  O->>C: ask-confirmation
+  C-->>U: "Confirm booking?"
+  U-->>C: "Confirm"
+  C->>O: confirmed
+  O->>B: perform booking
+  B-->>O: booking-id
+  O->>G: respond success
+  G->>U: booking confirmation
+
